@@ -5,25 +5,28 @@ import {
   Stylesheet,
   TouchableHighlight,
   Button,
+  Modal
 } from "react-native"
 import { range } from 'lodash'
+import Modals from './Modals'
 const weekdays = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"]
-export default class Month extends Component{
 
+export default class Month extends Component{
 
   render(){
     console.disableYellowBox = true
     return(
-      <View >
-        { this.renderWeeks() }
+      <View>
+        <Modals/>
+          { this.renderWeeks() }
       </View>
     )
   }
+  openWeeks
   renderWeeks() {
     let past_month_days = range(27, 31)
     let this_month_days = range(1, 30)
-
-    let days = past_month_days.concat(this_month_days, past_month_days );
+    let days = past_month_days.concat(this_month_days, past_month_days )
     let grouped_days = this.getWeeksArray(days)
     console.log(grouped_days);
     return grouped_days.map((week_days, index) => {
@@ -53,17 +56,19 @@ getWeeksArray(days) {
 renderDays(week_days) {
   console.log('days of the week',week_days);
     return week_days.map((day, index) => {
-      console.log('this is the day',day)
+
         return (
+
             <TouchableHighlight
-              key={index}
-              style={styles.day}
+              key= {index}
+              style= {styles.day}
+              onPress={() => {this.setModalVisible(true)}}
             >
               <Text style= {styles.day_text}>
-              {day}
+                {day}
               </Text>
-
             </TouchableHighlight>
+
         );
     });
 }

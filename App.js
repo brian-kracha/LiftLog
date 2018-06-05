@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Button
+  Button,
+  Modal
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Buttons from './Components/Buttons'
@@ -19,6 +20,7 @@ import { range } from 'lodash';
 import CalendarSelect from './Components/Calendar'
 import WeekDay from './Components/Weekday'
 import Month from './Components/Month'
+import Modals from './Components/Modals'
 //
 // const instructions = Platform.select({
 //   ios: 'Press Cmd+R to reload,\n' +
@@ -29,6 +31,18 @@ import Month from './Components/Month'
 
 // type Props = {};
 export default class App extends Component<Props> {
+  componentWillMount(){
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDLz51rM3lwAm9HfkJuRHeBg3sy27PyO4E",
+      authDomain: "lift-log-634c0.firebaseapp.com",
+      databaseURL: "https://lift-log-634c0.firebaseio.com",
+      projectId: "lift-log-634c0",
+      storageBucket: "",
+      messagingSenderId: "464519657877"
+    };
+    firebase.initializeApp(config);
+  }
   render() {
     return (
 
@@ -37,7 +51,8 @@ export default class App extends Component<Props> {
           <CalendarSelect/>
           <WeekDay/>
           <Month/>
-        </View>
+          <Modals/>
+      </View>
     );
   }
 }
