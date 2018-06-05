@@ -12,6 +12,8 @@ import { range } from 'lodash';
 export default class Calendar extends Component{
 
   render(){
+    let years =  range(2018,2020)
+    
     return(
 
       <View style={styles.calendar_header}>
@@ -67,7 +69,7 @@ calendar_header_item: {
   paddingTop: 15,
   paddingRight: 40,
   paddingLeft: 40,
-  
+
 },
 calendar_header_text: {
   fontWeight: 'bold',
