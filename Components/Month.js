@@ -17,7 +17,7 @@ export default class Month extends Component{
     console.disableYellowBox = true
     return(
       <View>
-        <Modals/>
+        
           { this.renderWeeks() }
       </View>
     )

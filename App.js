@@ -13,10 +13,10 @@ import {
   Button,
   Modal
 } from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome'
 import Buttons from './Components/Buttons'
-import { range } from 'lodash';
-
+import { range } from 'lodash'
+import firebase from 'firebase'
 import CalendarSelect from './Components/Calendar'
 import WeekDay from './Components/Weekday'
 import Month from './Components/Month'
