@@ -7,8 +7,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "faker": "^4.1.0",
     "firebase": "^5.0.4",
+    "flow": "^0.2.3",
     "lodash.range": "^3.2.0",
+    "moment": "^2.22.2",
     "prop-types": "^15.6.1",
     "react": "16.3.1",
     "react-native": "0.55.4",
