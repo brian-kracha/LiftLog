@@ -7,6 +7,9 @@ import {
   View,
   TouchableHighlight
 } from 'react-native';
+import currentDateIndex from './horizontalCal'
+
+
 export default class Buttons extends Component{
 
   render(){
@@ -25,14 +28,28 @@ export default class Buttons extends Component{
           <Text style={[styles.header_text, styles.text_center, styles.bold_text]}>Calendar</Text>
         </View>
         <View style={styles.header_item}>
-          <Text style={[styles.header_text, styles.text_right]}>Today</Text>
+          <TouchableHighlight onPress={() => this.goToToday()} >
+          <Text style={[styles.header_text,
+            styles.text_right]}>
+              Today
+            </Text>
+          </TouchableHighlight>
         </View>
       </View>
     )
   }
+
+
   _handlePress(){
     console.log('Pressed')
   }
+
+goToToday(currentDateIndex){
+  alert('today')
+  return this.currentDateIndex
+}
+
+
 }
 const styles = StyleSheet.create({
   header: {
